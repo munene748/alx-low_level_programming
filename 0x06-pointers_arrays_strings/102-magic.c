@@ -9,10 +9,10 @@ int main(void)
     a[2] = 1024;
     p = &n;
 
-    /* Write your line of code here... */
-    *(p + 7) = 98;
+    /* Add your line of code here... */
+    printf("a[2] = %d\n", *(p + 7));
 
-    /* ...so that this prints 98\n */
+    /* ...so that this prints a[2] = 98\n */
     printf("a[2] = %d\n", a[2]);
     return (0);
 }
