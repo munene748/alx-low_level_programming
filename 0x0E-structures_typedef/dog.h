@@ -1,21 +1,32 @@
-#ifndef DOG_MOD_H
-#define DOG_MOD_H
+#ifndef DOG_H
+#define DOG_H
 
-struct dog_mod
+/**
+ * struct dog - a dog's basic info
+ * @name: First member (dog's name)
+ * @age: Second member (dog's age)
+ * @owner: Third member (dog's owner)
+ *
+ * Description: Structure to store information about a dog.
+ */
+struct dog
 {
     char *name;
     float age;
     char *owner;
 };
 
-typedef struct dog_mod dog_mod_t;
+/**
+ * dog_t - typedef for struct dog
+ */
+typedef struct dog dog_t;
 
-void init_dog_mod(struct dog_mod *d, char *name, float age, char *owner);
-void print_dog_mod(struct dog_mod *d);
-dog_mod_t *new_dog_mod(char *name, float age, char *owner);
-void free_dog_mod(dog_mod_t *d);
-char *_strcpy_mod(char *dest, char *src);
-int _strlen_mod(char *s);
+void init_dog(struct dog *d, char *name, float age, char *owner);
+void print_dog(struct dog *d);
+dog_t *new_dog(char *name, float age, char *owner);
+void free_dog(dog_t *d);
+char *_strcpy(char *dest, char *src);
+int _strlen(char *s);
 
 #endif
 
