@@ -4,13 +4,14 @@
 #include <string.h>
 
 /**
- * check_num - check if there are digits in the string
+ * check_num - check if a string contains only digits
  * @str: input string
  *
- * Return: 1 if all characters are digits, 0 otherwise
+ * Return: 1 if the string contains only digits, 0 otherwise
  */
 int check_num(char *str)
 {
+<<<<<<< HEAD
  unsigned int count = 0;
 
  while (count < strlen(str))
@@ -22,14 +23,28 @@ int check_num(char *str)
  count++;
  }
  return (1);
+=======
+    unsigned int count;
+
+    count = 0;
+    while (count < strlen(str))
+    {
+        if (!isdigit(str[count]))
+        {
+            return 0;
+        }
+        count++;
+    }
+    return 1;
+>>>>>>> b61c7479b025a5063d332acf9d25edb3e4394bde
 }
 
 /**
- * main - Calculate the sum of numbers in command-line arguments
- * @argc: Count of arguments
- * @argv: Array of arguments
+ * main - Print the sum of valid integer arguments
+ * @argc: argument count
+ * @argv: argument vector
  *
- * Return: 0 (Success), 1 (Error)
+ * Return: 0 on success, 1 on error
  */
 int main(int argc, char *argv[])
 {
@@ -48,14 +63,13 @@ int main(int argc, char *argv[])
         else
         {
             printf("Error\n");
-            return (1);
+            return 1;
         }
-
         count++;
     }
 
     printf("%d\n", sum);
 
-    return (0);
+    return 0;
 }
 
