@@ -2,46 +2,46 @@
 #include <stdlib.h>
 
 /**
- * custom_string_nconcat - Concatenates two strings.
- * @str1: First string.
- * @str2: Second string.
+ * string_nconcat - Concatenates two strings.
+ * @string1: First string.
+ * @string2: Second string.
  * @n: Number of bytes to concatenate.
  *
  * Return: Pointer to the allocated memory.
  * If malloc fails, returns NULL.
  */
-char *custom_string_nconcat(char *str1, char *str2, unsigned int n)
+char *string_nconcat(char *string1, char *string2, unsigned int n)
 {
 	char *result;
-	unsigned int len_str1, len_str2, len_result, i;
+	unsigned int len1, len2, result_len, i;
 
-	if (str1 == NULL)
-		str1 = "";
+	if (string1 == NULL)
+		string1 = "";
 
-	if (str2 == NULL)
-		str2 = "";
+	if (string2 == NULL)
+		string2 = "";
 
-	for (len_str1 = 0; str1[len_str1] != '\0'; len_str1++)
+	for (len1 = 0; string1[len1] != '\0'; len1++)
 		;
 
-	for (len_str2 = 0; str2[len_str2] != '\0'; len_str2++)
+	for (len2 = 0; string2[len2] != '\0'; len2++)
 		;
 
-	if (n > len_str2)
-		n = len_str2;
+	if (n > len2)
+		n = len2;
 
-	len_result = len_str1 + n;
+	result_len = len1 + n;
 
-	result = malloc(len_result + 1);
+	result = malloc(result_len + 1);
 
 	if (result == NULL)
 		return (NULL);
 
-	for (i = 0; i < len_result; i++)
-		if (i < len_str1)
-			result[i] = str1[i];
+	for (i = 0; i < result_len; i++)
+		if (i < len1)
+			result[i] = string1[i];
 		else
-			result[i] = str2[i - len_str1];
+			result[i] = string2[i - len1];
 
 	result[i] = '\0';
 
